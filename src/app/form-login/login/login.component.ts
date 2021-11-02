@@ -35,11 +35,14 @@ export class LoginComponent implements OnInit {
             this.form.username,
             this.form.password
         )
+      console.log("signinForm:" , this.signInForm)
         this.authService.signIn(this.signInForm).subscribe(data => {
-            if (data.token != undefined) {
+          console.log("data:" , data)
+
+          if (data.token != undefined) {
                 this.tokenService.setToken(data.token);
-                this.tokenService.setName(data.name);
-                this.tokenService.setRoles(data.roles);
+                this.tokenService.setName(data.fullName);
+                this.tokenService.setRoles(data.role);
                 this.tokenService.setAvatar(data.avatar);
                 this.router.navigate(['user-account']).then(() => {
                     window.location.reload();

@@ -33,6 +33,7 @@ export class ChangeAvatarComponent implements OnInit {
     this.changeAvatar = new ChangeAvatar(
       this.form.avatar
     );
+    // @ts-ignore
     this.authService.changeAvatar(this.changeAvatar).subscribe(data => {
       if (JSON.stringify(data) == JSON.stringify(this.data1)) {
         this.status = 'please upload Avatar!';

@@ -27,7 +27,6 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './form-login/login/login.component';
 import { UserAccountComponent } from './form-login/user-account/user-account.component';
-import { ChangePasswordComponent } from './manage-profile/change-password/change-password.component';
 import {httpInterceptorProviders} from "./service/auth.interceptor";
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire';
@@ -49,7 +48,6 @@ export const appRoutes: Routes = [
     {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
     {path: 'login', component: LoginComponent, data: {title: 'Login'}},
     {path: 'user-account', component: UserAccountComponent, data: {title: 'User-Account'}},
-    {path: 'change-password', component: ChangePasswordComponent, data: {title: 'Change-Password'}},
     {path: 'change-avatar', component: ChangeAvatarComponent, data: {title: 'Change-Avatar'}},
     {
         path: 'guide/getting-started',
@@ -59,7 +57,7 @@ export const appRoutes: Routes = [
 ];
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, ChangePasswordComponent, UploadAvatarComponent, ChangeAvatarComponent, UploadFileComponent],
+    declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, UploadAvatarComponent, ChangeAvatarComponent, UploadFileComponent],
     imports: [
         HttpClientModule,
         BrowserModule,

@@ -1,12 +1,12 @@
 export class JwtResponse {
     public token: string;
-    public name: string;
+    public fullName: string;
     public avatar: string;
-    public roles: any[];
-    constructor(token: string, name: string,avatar: string, roles: any) {
+    public role: any[];
+    constructor(token: string, fullName: string,avatar: string, role: any) {
         this.token = token;
-        this.name = name;
+        this.fullName = fullName;
         this.avatar = avatar;
-        this.roles = roles;
+        this.role = role;
     }
 }

@@ -11,8 +11,8 @@ import {SignInForm} from "../model/SignInForm";
 })
 export class AuthService {
 //API_LOCAL
-  private API_SIGNUP = environment.API_LOCAL+'signup';
-  private API_SIGNIN = environment.API_LOCAL+'login';
+  private API_SIGNUP = environment.API_LOCAL+'account/signup';
+  private API_SIGNIN = environment.API_LOCAL+'account/login';
   // private API_CHANGE_PASSWORD = environment.API_LOCAL + 'change-password';
   // private API_CHANGE_AVATAR = environment.API_LOCAL + 'change-avatar';
   //API SERVER
