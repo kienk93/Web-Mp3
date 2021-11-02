@@ -1,10 +1,34 @@
-<div class="topnav" id="myTopnav">
-  <a routerLink="playlist" class="active">Home</a>
-  <a routerLink="registry">Registry</a>
-  <a routerLink="login">Login</a>
-  <a routerLink="logout">Logout</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+<!--  <button ng-click="myFunc()"><mat-icon>play_circle_outline</mat-icon>-->
+<!--  </button>-->
+<!--  <div ng-show="showMe">-->
+<!--    <div class="topnav" id="myTopnav">-->
+<!--      <a routerLink="playlist" class="active"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></a>-->
+<!--      <a routerLink="registry">Registry</a>-->
+<!--      <a routerLink="login">Login</a>-->
+<!--      <a routerLink="logout">Logout</a>-->
+<!--      <a href="javascript:void(0);" class="icon" onclick="myFunction()">-->
+<!--        <i class="fa fa-bars"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
+
+<div class="container">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><span class="material-icons">
+headphones
+</span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#"><a routerLink="playlist" class="active"><mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon></a>
+      </a></li>
+      <li><a href="#">      <a routerLink="registry">Registry</a>
+      </a></li>
+      <li><a href="#">      <a routerLink="login">Login</a>
+      </a></li>
+      <li><a href="#">      <a routerLink="logout">Logout</a>
+      </a></li>
+    </ul>
+  </div>
+</div>
