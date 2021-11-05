@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/Web-Mp3-FE'),
+      dir: require('path').join(__dirname, './coverage/projectPass'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -1,88 +1,76 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
 
+import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {PlaylistComponent} from './playlist/playlist.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
-
-import {HomeComponent} from './pages/home/home.component';
-import {GettingStartedComponent} from './pages/gettingstarted/gettingstarted.component';
-
-import {HttpClientModule} from '@angular/common/http';
-import {NgxAudioPlayerModule} from 'projects/ngx-audio-player/src/public_api';
-import {MatButtonModule} from '@angular/material/button';
-
-import {NavBarModule} from './shared/navbar';
-import {FooterModule} from './shared/footer';
-import {RegisterComponent} from './form-login/register/register.component';
+import {MatIconModule} from "@angular/material/icon";
+import {NavbarComponent} from './navbar/navbar.component';
+import {FooterComponent} from './footer/footer.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {RegitryComponent} from './regitry/regitry.component';
+import {LoginComponent} from './login/login.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {httpInterceptorProviders} from "./security/token.interceptor";
+import {MatSliderModule} from "@angular/material/slider";
+import {SongComponent} from './song/song.component';
+import {AngularFireStorage, AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {environment} from "../environments/environment";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { LoginComponent } from './form-login/login/login.component';
-import { UserAccountComponent } from './form-login/user-account/user-account.component';
-import { ChangePasswordComponent } from './manage-profile/change-password/change-password.component';
-import {httpInterceptorProviders} from "./service/auth.interceptor";
-import {AngularFireStorageModule} from '@angular/fire/storage';
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../environments/environment.prod';
-import { UploadAvatarComponent } from './upload/upload-avatar/upload-avatar.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { ChangeAvatarComponent } from './manage-profile/change-avatar/change-avatar.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
-import { UploadFileComponent } from './upload/upload-file/upload-file.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
-
-
-export const appRoutes: Routes = [
-    {path: '', component: HomeComponent, data: {title: 'Home'}},
-    {path: 'register', component: RegisterComponent, data: {title: 'Register'}},
-    {path: 'login', component: LoginComponent, data: {title: 'Login'}},
-    {path: 'user-account', component: UserAccountComponent, data: {title: 'User-Account'}},
-    {path: 'change-password', component: ChangePasswordComponent, data: {title: 'Change-Password'}},
-    {path: 'change-avatar', component: ChangeAvatarComponent, data: {title: 'Change-Avatar'}},
-    {
-        path: 'guide/getting-started',
-        component: GettingStartedComponent,
-        data: {title: 'Getting Started'}
-    }
-];
+import { SonglistComponent } from './songlist/songlist.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import { LatestComponent } from './playlist/latest/latest.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import { CountComponent } from './playlist/count/count.component';
+import { CountlikeComponent } from './playlist/countlike/countlike.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, GettingStartedComponent, RegisterComponent, LoginComponent, UserAccountComponent, ChangePasswordComponent, UploadAvatarComponent, ChangeAvatarComponent, UploadFileComponent],
+  declarations: [
+    AppComponent,
+    PlaylistComponent,
+    NavbarComponent,
+    FooterComponent,
+    RegitryComponent,
+    LoginComponent,
+    SongComponent,
+    SonglistComponent,
+    LatestComponent,
+    CountComponent,
+    CountlikeComponent
+  ],
     imports: [
-        HttpClientModule,
-        BrowserModule,
-        MatCardModule,
-        FormsModule,
-        MatToolbarModule,
-        MatIconModule,
         MatInputModule,
-        MatRadioModule,
-        MatCheckboxModule,
-        MatSlideToggleModule,
-        MatButtonModule,
+        FormsModule,
+        BrowserModule,
+        AppRoutingModule,
         BrowserAnimationsModule,
-        NavBarModule, FooterModule,
-        MatNativeDateModule,
-        NgxAudioPlayerModule,
         AngularFireStorageModule,
         AngularFireModule.initializeApp(environment.firebaseConfig),
-        RouterModule.forRoot(appRoutes, {useHash: false}), MatFormFieldModule, ReactiveFormsModule, MatProgressSpinnerModule, MatPaginatorModule, Ng2SearchPipeModule, MatProgressBarModule, MatSelectModule, MatDatepickerModule
+        MatIconModule,
+        MatToolbarModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatSliderModule,
+        MatProgressBarModule,
+        MatFormFieldModule,
+        MatGridListModule,
+        MatCardModule,
+        MatPaginatorModule,
+        MatTableModule,
+        MatMenuModule
     ],
-    providers: [httpInterceptorProviders],
-    bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent]
 })
-
 export class AppModule {
 }

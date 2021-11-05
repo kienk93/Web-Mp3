@@ -1,0 +1,44 @@
+#name-song {
+  font-weight: bold;
+  position: relative;
+  animation: spin7 15s infinite;
+  animation-timing-function: linear;
+  text-shadow: 3px 3px 10px #3cf501;
+  color: #F2E6D8;
+  font-size: 18px;
+}
+
+@keyframes spin7 {
+  from {
+    left: -30%;
+  }
+  to {
+    left: 30%;
+  }
+}
+
+.play-pause {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: spin5 2s linear infinite;
+  text-shadow: 3px 3px 10px #3cf501;
+  color: #ecd11f;
+  font-size: 18px;
+}
+
+.play-paused {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 3px 3px 10px #3cf501;
+  color: #ecd11f;
+  font-size: 18px;
+}
+
+@keyframes spin5 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
